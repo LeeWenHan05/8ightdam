@@ -998,9 +998,6 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-    // ==========================================
-// DEVICE ENFORCER & DVD LOGO PROTOCOL
-// ==========================================
 let dvdAnimationFrame;
 let dvdInitialized = false;
 
@@ -1079,9 +1076,6 @@ function enforceDesktopOnly() {
 window.addEventListener('resize', enforceDesktopOnly);
 enforceDesktopOnly();
 
-        // ==========================================
-        // LIVE TIME LOGIC
-        // ==========================================
         function updateKLLocalTime() {
             const clockEl = document.getElementById('kl-live-clock');
             if (clockEl) {
@@ -1092,9 +1086,6 @@ enforceDesktopOnly();
         setInterval(updateKLLocalTime, 1000);
         updateKLLocalTime();
 
-        // ==========================================
-        // SMART NAVBAR (HIDE ON SCROLL DOWN)
-        // ==========================================
         let lastScrollTopPosition = 0;
         const mainNavbarContainer = document.getElementById('main-nav');
         window.addEventListener('scroll', () => {
@@ -1108,9 +1099,6 @@ enforceDesktopOnly();
             lastScrollTopPosition = currentScrollTop <= 0 ? 0 : currentScrollTop;
         }, { passive: true });
 
-        // ==========================================
-        // TRUE THREE.JS ASSET LOADING MANAGER
-        // ==========================================
         document.body.style.overflow = "hidden";
         const logs = ["> MOUNTING ASSETS...", "> COMPILING 3D SCENE...", "> INJECTING COLOR PROFILES...", "> BYPASSING PROTOCOLS...", "> ACCESS GRANTED."];
         const logContainer = document.getElementById('boot-logs');
@@ -1183,9 +1171,6 @@ enforceDesktopOnly();
             }
         }, 6500);
 
-        // ==========================================
-        // THREE.JS ENVIRONMENT
-        // ==========================================
         const CONFIG = { modelScale: 0.35, modelOffsetY: 0, modelOffsetX: 0 };
         const canvas = document.getElementById('logo-3d-canvas');
         const scene = new THREE.Scene();
@@ -1261,9 +1246,6 @@ enforceDesktopOnly();
             gsap.to(logoGroup.rotation, { x: 0, y: 0, z: 0, duration: 2.5, ease: "power3.out" });
         }
 
-        // ==========================================
-        // CUSTOM CURSOR MODULE
-        // ==========================================
         const dot = document.getElementById('cursor-dot'); 
         const ring = document.getElementById('cursor-ring');
         let mouse = { x: 0, y: 0 }, pos = { x: 0, y: 0 };
@@ -1282,9 +1264,6 @@ enforceDesktopOnly();
             el.addEventListener('mouseleave', () => { if(ring) ring.classList.remove('cursor-hover'); });
         });
 
-        // ==========================================
-        // GHOST TEXT
-        // ==========================================
         const ghostChars = document.querySelectorAll('.ghost-char');
         const glitchSymbols = ["█", "▓", "▒", "░", "/>", "_", "\\", "[]", "8", "0", "1", "X"];
         ghostChars.forEach(char => { char._isHovered = false; char._glitchInterval = null; });
@@ -1304,9 +1283,6 @@ enforceDesktopOnly();
             });
         });
 
-        // ==========================================
-        // SLOGANS ANIMATION & PROXIMITY
-        // ==========================================
         const heroTitle = new SplitType('#main-slogan', { types: 'words, chars', tagName: 'span' });
         gsap.fromTo(heroTitle.chars, { opacity: 0, yPercent: 120, scaleY: 2.3, scaleX: 0.7, transformOrigin: '50% 0%' }, { opacity: 1, yPercent: 0, scaleY: 1, scaleX: 1, duration: 0.8, ease: 'back.out(2)', stagger: 0.02, scrollTrigger: { trigger: '#main-slogan', start: 'top 85%', end: 'bottom 20%', toggleActions: 'play reverse play reverse' } });
 
@@ -1334,9 +1310,6 @@ enforceDesktopOnly();
             gsap.fromTo(el, { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%", end: "bottom 10%", toggleActions: "play reverse play reverse" } }); 
         });
 
-        // ==========================================
-        // ROTATING CAPABILITIES LOOP
-        // ==========================================
         const rotData = [ { text: "visuals.", bgClass: "bg-blue", textClass: "text-white" }, { text: "systems.", bgClass: "bg-lime", textClass: "text-dark" }, { text: "attention.", bgClass: "bg-dark", textClass: "text-lime" } ];
         const rotContainer = document.querySelector('.rb-rotate-container');
         const rotWrapper = document.querySelector('#rb-wrapper');
@@ -1358,9 +1331,6 @@ enforceDesktopOnly();
         }
         setTimeout(animateRotatingText, 2500);
 
-        // ==========================================
-        // INTERACTIVE STRIPE MARQUEE
-        // ==========================================
         const stripeWrapper = document.getElementById('stripe-wrapper');
         const stripeTrack = document.getElementById('stripe-track');
         if (stripeWrapper && stripeTrack) {
@@ -1380,9 +1350,6 @@ enforceDesktopOnly();
             stripeWrapper.addEventListener('mousedown', (e) => onDragStart(e.clientX)); window.addEventListener('mousemove', (e) => onDragMove(e.clientX)); window.addEventListener('mouseup', onDragEnd);
         }
 
-        // ==========================================
-        // ORBITAL WORKS WHEEL
-        // ==========================================
         const orbitalImages = [
             { src: 'Halolo Park_Exclusive Lucky Draw Board.jpg', type: 'PROMO BOARD', company: 'Halolo Park', logo: 'halolo_logo.png', logoScale: 1 },
             { src: 'KLAW_Exchange Cake Signage.jpg', type: 'SIGNAGE', company: 'KLAW', logo: 'klaw_logo.png', logoScale: 1.5 },
@@ -1461,9 +1428,6 @@ enforceDesktopOnly();
         }
         animateOrbital();
 
-        // ==========================================
-        // ACCORDION MODULE INTERACTIVITY
-        // ==========================================
         const servicesData = [
             { id: "01", title: "Graphic Design", desc: "Clean and modern visual design for digital and print use. Structuring information to be instantly digested.", features: ["Brand Identity & Guidelines", "Typography & Layout Systems", "Digital & Print Collaterals", "Visual Hierarchy Optimization"], moduleTag: "SYS_MODULE_01 // GRAPHIC_UNIT" },
             { id: "02", title: "Social Media", desc: "Branded visual content crafted specifically for digital platforms to maximize engagement and readability.", features: ["Instagram / FB Feed & Stories", "XiaoHongShu Visual Formatting", "WhatsApp Promo Graphics", "Consistent Brand Voice"], moduleTag: "SYS_MODULE_02 // SOCIAL_CORE" },
@@ -1555,9 +1519,6 @@ enforceDesktopOnly();
             ScrollTrigger.create({ trigger: "#services", start: "top 60%", once: true, onEnter: () => { switchTab(0); } });
         }
 
-        // ==========================================
-        // TEXT DESTRUCT GLITCH HOVER
-        // ==========================================
         const capTitleEl = document.getElementById('capabilities-title');
         const capContainer = document.getElementById('capabilities-container');
 
@@ -1708,9 +1669,6 @@ enforceDesktopOnly();
             magWrap.addEventListener('mouseleave', () => { gsap.to(magBtn, { x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' }); });
         }
 
-        // ==========================================
-        // PARTICLE TEXT MATRIX ENGINE
-        // ==========================================
         class PremiumParticleText {
             constructor(canvasId) {
                 this.canvas = document.getElementById(canvasId); if (!this.canvas) return;
@@ -1802,9 +1760,6 @@ enforceDesktopOnly();
         }
         new PremiumParticleText('particle-text-canvas');
 
-        // ==========================================
-        // OVERRIDE CONTROLS (TERMINAL RE-SYNC)
-        // ==========================================
         const terminalCode = document.getElementById('cyber-terminal');
         const textSpan = document.getElementById('terminal-text');
 
@@ -1863,9 +1818,6 @@ pricingCards.forEach(card => {
             tag.addEventListener('mouseleave', () => { clearInterval(glitchInterval); tag.innerText = originalPrice; });
         });
 
-        // ==========================================
-        // CANVAS DITHER FILTER INTERACTIVE
-        // ==========================================
         const ditherConfig = { ditherSize: 4, radius: 0.08, exponent: 3.0, decay: 0.02, color: "#CCFF00" };
         const bayerMatrix = [ [ 0/16,  8/16,  2/16, 10/16], [12/16,  4/16, 14/16,  6/16], [ 3/16, 11/16,  1/16,  9/16], [15/16,  7/16, 13/16,  5/16] ];
         const innerOverlays = document.querySelectorAll('.card-inner-overlay');
@@ -1960,9 +1912,6 @@ pricingCards.forEach(card => {
             scrollObserver.observe(cardMonthly);
         }
     
-        // ==========================================
-        // DECRYPTION INTERFACE CYBER PROTOCOL
-        // ==========================================
         const termData = {
             'term-1': { title: 'PAYMENT & DEPOSIT', content: ['50% non-refundable deposit is required to initialize the project.', 'Remaining 50% balance must be paid within 30 days or before final delivery.', 'Late payment triggers a +1.5% monthly fee and system lock (work paused).'] },
             'term-2': { title: 'SOURCE FILES', content: ['Editable source files (AI, PSD, Canva link) are locked by default.', 'Final deliverables include exported JPG, PNG, and PDF only.', 'Source file access can be granted starting from RM20 per final design file.'] },
@@ -2097,9 +2046,6 @@ if (crtScreen) {
             typeWriterObserver.observe(termSection);
         }
 
-        // ==========================================
-        // TEXT SCRAMBLE MATRIX (CONTACT)
-        // ==========================================
         const massiveTexts = document.querySelectorAll('.massive-hover-text');
         const decryptChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$";
         massiveTexts.forEach(text => {
